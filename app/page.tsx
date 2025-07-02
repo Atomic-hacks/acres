@@ -1,103 +1,176 @@
-import Image from "next/image";
+"use client";
+import { motion, Variants } from "framer-motion";
+import { HeroSection } from "@/components/home/Hero";
+import { StatsSection } from "@/components/home/StatsSection";
+import { AboutPreview } from "@/components/home/AboutPreview";
+import { ProgramPreview } from "@/components/home/ProgramPreview";
+import { SpeakersPreview } from "@/components/home/SpeakerPreview";
+import { PartnersPreview } from "@/components/home/PartnersPreview";
+import { VenuePreview } from "@/components/home/VenuePreview";
+import { CTASection } from "@/components/home/CTASection";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
+  NavbarLogo,
+  NavbarButton,
+} from "@/components/layout/Nav";
+import { useState } from "react";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const sectionVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Navigation items
+const navItems = [
+  { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
+  { name: "Program", link: "#program" },
+  { name: "Speakers", link: "#speakers" },
+  { name: "Partners", link: "#partners" },
+  { name: "Venue", link: "#venue" },
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileItemClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <>
+      {/* Dynamic Navigation */}
+      <Navbar>
+        {/* Desktop Navigation */}
+        <NavBody>
+          <NavbarLogo />
+          <NavItems items={navItems} />
+          <NavbarButton href="#register" variant="primary">
+            Register Now
+          </NavbarButton>
+        </NavBody>
+
+        {/* Mobile Navigation */}
+        <MobileNav>
+          <MobileNavHeader>
+            <NavbarLogo />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={handleMobileMenuToggle}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </MobileNavHeader>
+
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={handleMobileMenuToggle}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            {navItems.map((item, idx) => (
+              <motion.a
+                key={idx}
+                href={item.link}
+                onClick={handleMobileItemClick}
+                className="block w-full px-4 py-3 text-blue-100 hover:text-white hover:bg-black/60 rounded-lg transition-all duration-300 font-medium border border-transparent hover:border-blue-300/40"
+                whileHover={{ scale: 1.02, x: 10 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+            <div className="pt-4 border-t border-blue-300/20">
+              <NavbarButton
+                href="#register"
+                variant="primary"
+                className="w-full justify-center"
+                onClick={handleMobileItemClick}
+              >
+                Register Now
+              </NavbarButton>
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+
+      {/* Consistent Background Effects - Matching AboutPreview */}
+      <div className="fixed inset-0 bg-gradient-to-br from-black via-slate-900 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_rgba(120,119,198,0.3),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(120,119,198,0.3),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,_rgba(120,119,198,0.2),_transparent_50%)]" />
+      </div>
+
+      <motion.main
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10"
+      >
+        {/* Hero Section */}
+        <motion.div variants={sectionVariants} id="home">
+          <HeroSection />
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div variants={sectionVariants}>
+          <StatsSection />
+        </motion.div>
+
+        {/* About Preview */}
+        <motion.div variants={sectionVariants} id="about">
+          <AboutPreview />
+        </motion.div>
+
+        {/* Program Preview */}
+        <motion.div variants={sectionVariants} id="program">
+          <ProgramPreview />
+        </motion.div>
+
+        {/* Speakers Preview */}
+        <motion.div variants={sectionVariants} id="speakers">
+          <SpeakersPreview />
+        </motion.div>
+
+        {/* Partners Preview */}
+        <motion.div variants={sectionVariants} id="partners">
+          <PartnersPreview />
+        </motion.div>
+
+        {/* Venue Preview */}
+        <motion.div variants={sectionVariants} id="venue">
+          <VenuePreview />
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div variants={sectionVariants} id="register">
+          <CTASection />
+        </motion.div>
+      </motion.main>
+    </>
   );
 }
