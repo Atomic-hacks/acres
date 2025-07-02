@@ -275,8 +275,8 @@ export const NavbarLogo = () => {
       whileTap={{ scale: 0.95 }}
       className="relative z-20 flex items-center space-x-3 px-3 py-2 rounded-ful bg-black/60 backdrop-blur-lg border border-blue-300/40 hover:bg-black/80 hover:border-blue-300/60 transition-all duration-300 shadow-xl shadow-blue-500/20"
     >
-      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30 border border-blue-400/50">
-        <span className="text-white font-bold text-sm">A</span>
+      <div className="md:w-14 h-14 w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30 border border-blue-400/50">
+        <img src="/logo.jpg" alt="logo" />
       </div>
       <span
         className="font-bold text-blue-100 text-lg"
