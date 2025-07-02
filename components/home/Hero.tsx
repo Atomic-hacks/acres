@@ -78,7 +78,7 @@ export function HeroSection() {
       animate="visible"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black pt-14"
     >
-      {/* Enhanced Video Background */}
+      {/* Enhanced Video Background - Fixed zoom and positioning */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -88,7 +88,7 @@ export function HeroSection() {
         <div className="relative w-full h-full">
           <video
             ref={videoRef}
-            className="w-full h-full object-cover"
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover"
             autoPlay
             muted={isMuted}
             loop
@@ -108,8 +108,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Video Controls */}
-      <div className="absolute top-6 right-6 z-30 flex gap-2">
+      {/* Video Controls - Adjusted for mobile */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 flex gap-2">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -145,132 +145,129 @@ export function HeroSection() {
         }}
       />
 
-      {/* Enhanced content with better contrast */}
+      {/* Enhanced content with better mobile centering */}
       <div
-        className="relative z-20 max-w-7xl mx-auto px-6 text-center flex flex-col items-center justify-between min-h-screen py-12"
+        className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center min-h-screen py-8 sm:py-12"
         style={{
           transform: `translateY(${scrollY * -0.2}px)`,
         }}
       >
-        {/* Top Badge with better contrast */}
+        {/* Top Badge with better mobile spacing */}
         <motion.div
           variants={slideUpVariants}
-          className="inline-flex items-center px-6 py-3 rounded-full bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-sm font-medium shadow-2xl"
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-xs sm:text-sm font-medium shadow-2xl mb-6 sm:mb-8"
         >
-          <Calendar className="w-4 h-4 mr-2" />
-          March 15-16, 2025 • Abuja & Port Harcourt
+          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+          <span className="text-center">March 15-16, 2025 • Abuja & Port Harcourt</span>
         </motion.div>
 
-        {/* Main Content Area */}
-        <div className="flex-1 flex flex-col items-center justify-center">
-          {/* ACRES Title with better contrast */}
-          <motion.h1
-            variants={slideUpVariants}
-            className="text-[8rem] md:text-[12rem] lg:text-[16rem] xl:text-[20rem] font-black leading-none tracking-tight mb-6"
-            style={{
-              fontFamily: "system-ui, -apple-system, sans-serif",
-              textShadow:
-                "0 0 80px rgba(96, 165, 250, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8)",
-              transform: `translateY(${scrollY * -0.4}px)`,
-            }}
-          >
-            <span className="text-white drop-shadow-2xl">ACRES</span>
-          </motion.h1>
+        {/* ACRES Title with responsive sizing */}
+        <motion.h1
+          variants={slideUpVariants}
+          className="text-6xl sm:text-8xl md:text-[10rem] lg:text-[14rem] xl:text-[18rem] font-black leading-none tracking-tight mb-4 sm:mb-6"
+          style={{
+            fontFamily: "system-ui, -apple-system, sans-serif",
+            textShadow:
+              "0 0 80px rgba(96, 165, 250, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8)",
+            transform: `translateY(${scrollY * -0.4}px)`,
+          }}
+        >
+          <span className="text-white drop-shadow-2xl">ACRES</span>
+        </motion.h1>
 
-          {/* Subtitle with better contrast */}
-          <motion.p
-            variants={slideUpVariants}
-            className="text-2xl md:text-3xl lg:text-4xl text-white font-medium mb-8 max-w-6xl leading-relaxed drop-shadow-2xl"
-            style={{
-              transform: `translateY(${scrollY * -0.3}px)`,
-              textShadow: "0 2px 10px rgba(0, 0, 0, 0.9)",
-            }}
-          >
-            African Construction & Real Estate Summit
-          </motion.p>
+        {/* Subtitle with responsive sizing */}
+        <motion.p
+          variants={slideUpVariants}
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-medium mb-4 sm:mb-6 max-w-6xl leading-relaxed drop-shadow-2xl px-2"
+          style={{
+            transform: `translateY(${scrollY * -0.3}px)`,
+            textShadow: "0 2px 10px rgba(0, 0, 0, 0.9)",
+          }}
+        >
+          African Construction & Real Estate Summit
+        </motion.p>
 
-          {/* Description with better contrast */}
-          <motion.p
-            variants={slideUpVariants}
-            className="text-lg md:text-xl text-blue-50 leading-relaxed max-w-4xl mx-auto mb-12 drop-shadow-xl"
-            style={{
-              transform: `translateY(${scrollY * -0.25}px)`,
-              textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)",
-            }}
-          >
-            Connecting Africa&apos;s construction and real estate leaders,
-            investors, and innovators to build the continent&apos;s sustainable
-            future.
-          </motion.p>
+        {/* Description with better mobile text sizing */}
+        <motion.p
+          variants={slideUpVariants}
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-50 leading-relaxed max-w-4xl mx-auto mb-8 sm:mb-12 drop-shadow-xl px-4"
+          style={{
+            transform: `translateY(${scrollY * -0.25}px)`,
+            textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)",
+          }}
+        >
+          Connecting Africa&apos;s construction and real estate leaders,
+          investors, and innovators to build the continent&apos;s sustainable
+          future.
+        </motion.p>
 
-          {/* Buttons with better contrast */}
-          <motion.div
-            variants={slideUpVariants}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
-            style={{
-              transform: `translateY(${scrollY * -0.2}px)`,
-            }}
-          >
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-semibold text-lg shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 flex items-center border border-blue-400/50"
-            >
-              Register Now
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 border-2 border-white/40 text-white rounded-full font-semibold text-lg backdrop-blur-lg bg-black/30 hover:bg-white/20 hover:border-white/60 transition-all duration-300 shadow-xl"
-            >
-              View Program
-            </motion.button>
-          </motion.div>
-
-          {/* Stats with better contrast */}
-          <motion.div
-            variants={slideUpVariants}
-            className="grid grid-cols-3 gap-8 max-w-4xl mx-auto"
-            style={{
-              transform: `translateY(${scrollY * -0.15}px)`,
-            }}
-          >
-            {[
-              { icon: Users, label: "5000+", desc: "Attendees" },
-              { icon: MapPin, label: "40+", desc: "Countries" },
-              { icon: Calendar, label: "2", desc: "Days" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="flex flex-col items-center p-4 rounded-xl bg-black/60 backdrop-blur-lg border border-white/20 hover:bg-black/70 hover:border-white/30 transition-all duration-300 shadow-xl"
-              >
-                <stat.icon className="w-6 h-6 text-blue-300 mb-2" />
-                <div className="text-xl font-bold text-white mb-1 drop-shadow-lg">
-                  {stat.label}
-                </div>
-                <div className="text-blue-200 text-sm drop-shadow-md">
-                  {stat.desc}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Bottom section with better contrast */}
+        {/* Buttons with better mobile spacing */}
         <motion.div
           variants={slideUpVariants}
-          className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl text-white text-xl md:text-2xl font-medium drop-shadow-2xl"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12 w-full max-w-md sm:max-w-none"
+          style={{
+            transform: `translateY(${scrollY * -0.2}px)`,
+          }}
+        >
+          <motion.button
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-semibold text-base sm:text-lg shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center border border-blue-400/50"
+          >
+            Register Now
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/40 text-white rounded-full font-semibold text-base sm:text-lg backdrop-blur-lg bg-black/30 hover:bg-white/20 hover:border-white/60 transition-all duration-300 shadow-xl"
+          >
+            View Program
+          </motion.button>
+        </motion.div>
+
+        {/* Stats with better mobile layout */}
+        <motion.div
+          variants={slideUpVariants}
+          className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 max-w-sm sm:max-w-2xl md:max-w-4xl mx-auto mb-8 sm:mb-12"
+          style={{
+            transform: `translateY(${scrollY * -0.15}px)`,
+          }}
+        >
+          {[
+            { icon: Users, label: "5000+", desc: "Attendees" },
+            { icon: MapPin, label: "40+", desc: "Countries" },
+            { icon: Calendar, label: "2", desc: "Days" },
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="flex flex-col items-center p-3 sm:p-4 rounded-xl bg-black/60 backdrop-blur-lg border border-white/20 hover:bg-black/70 hover:border-white/30 transition-all duration-300 shadow-xl"
+            >
+              <stat.icon className="w-4 h-4 sm:w-6 sm:h-6 text-blue-300 mb-1 sm:mb-2" />
+              <div className="text-lg sm:text-xl font-bold text-white mb-1 drop-shadow-lg">
+                {stat.label}
+              </div>
+              <div className="text-blue-200 text-xs sm:text-sm drop-shadow-md text-center">
+                {stat.desc}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Bottom section with better mobile layout */}
+        <motion.div
+          variants={slideUpVariants}
+          className="flex flex-col sm:flex-row items-center justify-between w-full max-w-6xl text-white text-lg sm:text-xl md:text-2xl font-medium drop-shadow-2xl gap-4 sm:gap-0"
           style={{
             transform: `translateY(${scrollY * -0.1}px)`,
             textShadow: "0 2px 10px rgba(0, 0, 0, 0.9)",
           }}
         >
-          <div className="mb-4 md:mb-0">March 15-16, 2025</div>
-          <div className="hidden md:block w-48 h-px bg-white/50 shadow-lg" />
-          <div>Abuja & Port Harcourt</div>
+          <div className="text-center sm:text-left">March 15-16, 2025</div>
+          <div className="hidden sm:block w-32 md:w-48 h-px bg-white/50 shadow-lg" />
+          <div className="text-center sm:text-right">Abuja & Port Harcourt</div>
         </motion.div>
       </div>
     </motion.section>
