@@ -8,7 +8,7 @@ interface SectionTitleProps {
   title: string;
   subtitle?: string;
   description?: string;
-  accent?: "emerald" | "amber" | "slate" | "blue" | "purple" | "cyan";
+  accent?: "emerald" | "amber" | "slate" | "indigo" | "purple" | "cyan";
   alignment?: "left" | "center";
   children?: ReactNode;
 }
@@ -28,12 +28,12 @@ const accentColors = {
     glow: "bg-amber-500/20",
     badgeText: "text-amber-100",
   },
-  blue: {
-    badge: "from-blue-400 to-blue-500",
-    text: "from-blue-300 via-blue-200 to-blue-100",
-    border: "border-blue-300/40",
-    glow: "bg-blue-500/20",
-    badgeText: "text-blue-100",
+  indigo: {
+    badge: "from-indigo-400 to-indigo-500",
+    text: "from-indigo-300 via-indigo-200 to-indigo-100",
+    border: "border-indigo-300/40",
+    glow: "bg-indigo-500/20",
+    badgeText: "text-indigo-100",
   },
   slate: {
     badge: "from-slate-400 to-slate-500",
@@ -62,7 +62,7 @@ export function SectionTitle({
   title,
   subtitle,
   description,
-  accent = "blue",
+  accent = "indigo",
   alignment = "center",
   children,
 }: SectionTitleProps) {
@@ -74,11 +74,11 @@ export function SectionTitle({
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Effects - Matching About/CTA */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/15 to-blue-300/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/15 to-indigo-300/25" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -100,7 +100,7 @@ export function SectionTitle({
           >
             {/* Enhanced holographic glow effect */}
             <div
-              className={`absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/15 to-blue-400/10 rounded-full blur-xl animate-pulse`}
+              className={`absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-indigo-500/15 to-indigo-400/10 rounded-full blur-xl animate-pulse`}
             />
 
             {/* Badge with enhanced styling */}
@@ -143,7 +143,7 @@ export function SectionTitle({
             className={`max-w-3xl ${textAlign} mb-8`}
           >
             <p
-              className="text-xl sm:text-2xl text-blue-50 leading-relaxed font-medium"
+              className="text-xl sm:text-2xl text-indigo-50 leading-relaxed font-medium"
               style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}
             >
               {description}

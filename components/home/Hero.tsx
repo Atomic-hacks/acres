@@ -103,7 +103,7 @@ export function HeroSection() {
 
           {/* Fallback background when video not loaded */}
           {!videoLoaded && (
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-900/50 to-purple-900/30" />
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-indigo-900/50 to-purple-900/30" />
           )}
         </div>
       </div>
@@ -137,9 +137,9 @@ export function HeroSection() {
         </motion.button>
       </div>
 
-      {/* Blue Gradient Overlay with Parallax */}
+      {/* indigo Gradient Overlay with Parallax */}
       <div
-        className="absolute inset-0 z-10 bg-gradient-to-r from-transparent via-blue-400/15 to-blue-300/25"
+        className="absolute inset-0 z-10 bg-gradient-to-r from-transparent via-indigo-400/15 to-indigo-300/25"
         style={{
           transform: `translateY(${scrollY * 0.3}px)`,
         }}
@@ -155,7 +155,7 @@ export function HeroSection() {
         {/* Top Badge with better mobile spacing */}
         <motion.div
           variants={slideUpVariants}
-          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-xs sm:text-sm font-medium shadow-2xl mb-6 sm:mb-8"
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-xs sm:text-sm font-medium shadow-2xl mb-6 sm:mb-8"
         >
           <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
           <span className="text-center">
@@ -192,7 +192,7 @@ export function HeroSection() {
         {/* Description with better mobile text sizing */}
         <motion.p
           variants={slideUpVariants}
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-50 leading-relaxed max-w-4xl mx-auto mb-8 sm:mb-12 drop-shadow-xl px-4"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-indigo-50 leading-relaxed max-w-4xl mx-auto mb-8 sm:mb-12 drop-shadow-xl px-4"
           style={{
             transform: `translateY(${scrollY * -0.25}px)`,
             textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)",
@@ -213,7 +213,7 @@ export function HeroSection() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-semibold text-base sm:text-lg shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center border border-blue-400/50"
+            className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-full font-semibold text-base sm:text-lg shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 flex items-center justify-center border border-indigo-400/50"
           >
             Register Now
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -246,11 +246,11 @@ export function HeroSection() {
               whileHover={{ y: -5, scale: 1.02 }}
               className="flex flex-col items-center p-3 sm:p-4 rounded-xl bg-black/60 backdrop-blur-lg border border-white/20 hover:bg-black/70 hover:border-white/30 transition-all duration-300 shadow-xl"
             >
-              <stat.icon className="w-4 h-4 sm:w-6 sm:h-6 text-blue-300 mb-1 sm:mb-2" />
+              <stat.icon className="w-4 h-4 sm:w-6 sm:h-6 text-indigo-300 mb-1 sm:mb-2" />
               <div className="text-lg sm:text-xl font-bold text-white mb-1 drop-shadow-lg">
                 {stat.label}
               </div>
-              <div className="text-blue-200 text-xs sm:text-sm drop-shadow-md text-center">
+              <div className="text-indigo-200 text-xs sm:text-sm drop-shadow-md text-center">
                 {stat.desc}
               </div>
             </motion.div>

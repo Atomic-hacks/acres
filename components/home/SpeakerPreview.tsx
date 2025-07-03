@@ -1,13 +1,7 @@
 // components/SpeakersPreview.tsx
 "use client";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Award,
-  Building,
-  MapPin,
-  Users,
-} from "lucide-react";
+import { ArrowRight, Award, Building, MapPin, Users } from "lucide-react";
 
 const featuredSpeakers = [
   {
@@ -24,7 +18,7 @@ const featuredSpeakers = [
     ],
     social: {},
     featured: true,
-    color: "from-blue-500 to-blue-600",
+    color: "from-indigo-500 to-indigo-600",
   },
   {
     name: "International Finance Expert",
@@ -40,7 +34,7 @@ const featuredSpeakers = [
     ],
     social: {},
     featured: true,
-    color: "from-blue-400 to-blue-500",
+    color: "from-indigo-400 to-indigo-500",
   },
   {
     name: "Urban Development Specialist",
@@ -52,7 +46,7 @@ const featuredSpeakers = [
     specialties: ["Sustainability", "Smart Cities", "Urban Planning"],
     social: {},
     featured: true,
-    color: "from-blue-300 to-blue-400",
+    color: "from-indigo-300 to-indigo-400",
   },
   {
     name: "Academic Partner",
@@ -68,7 +62,7 @@ const featuredSpeakers = [
     ],
     social: {},
     featured: false,
-    color: "from-blue-200 to-blue-300",
+    color: "from-indigo-200 to-indigo-300",
   },
 ];
 
@@ -96,12 +90,12 @@ const HolographicSpeakerCard = ({
     className="group relative"
   >
     {/* Main card */}
-    <div className="bg-black/60 backdrop-blur-lg border border-white/20 rounded-2xl p-8 h-full hover:border-blue-300/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:bg-black/70">
+    <div className="bg-black/60 backdrop-blur-lg border border-white/20 rounded-2xl p-8 h-full hover:border-indigo-300/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:bg-black/70">
       {/* Speaker Avatar Section */}
       <div className="relative mb-6">
         <div className="relative">
           <div
-            className={`w-16 h-16 bg-gradient-to-r ${speaker.color} rounded-xl flex items-center justify-center mx-auto shadow-2xl shadow-blue-500/30 border border-blue-400/50 group-hover:scale-110 transition-transform duration-300`}
+            className={`w-16 h-16 bg-gradient-to-r ${speaker.color} rounded-xl flex items-center justify-center mx-auto shadow-2xl shadow-indigo-500/30 border border-indigo-400/50 group-hover:scale-110 transition-transform duration-300`}
           >
             <span className="text-xl font-bold text-white drop-shadow-lg">
               {speaker.name
@@ -115,22 +109,22 @@ const HolographicSpeakerCard = ({
 
       {/* Speaker Details */}
       <div>
-        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors drop-shadow-lg">
+        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-indigo-300 transition-colors drop-shadow-lg">
           {speaker.name}
         </h3>
-        <p className="text-blue-300 font-semibold mb-2 drop-shadow-md text-sm">
+        <p className="text-indigo-300 font-semibold mb-2 drop-shadow-md text-sm">
           {speaker.title}
         </p>
-        <p className="text-blue-100 text-sm mb-2 flex items-center gap-1 drop-shadow-md">
+        <p className="text-indigo-100 text-sm mb-2 flex items-center gap-1 drop-shadow-md">
           <Building className="w-4 h-4 flex-shrink-0" />
           <span className="leading-tight">{speaker.company}</span>
         </p>
-        <p className="text-blue-200 text-sm mb-4 flex items-center gap-1 drop-shadow-md">
+        <p className="text-indigo-200 text-sm mb-4 flex items-center gap-1 drop-shadow-md">
           <MapPin className="w-4 h-4 flex-shrink-0" />
           {speaker.location}
         </p>
 
-        <p className="text-blue-50 text-sm leading-relaxed mb-4 drop-shadow-md line-clamp-3">
+        <p className="text-indigo-50 text-sm leading-relaxed mb-4 drop-shadow-md line-clamp-3">
           {speaker.bio}
         </p>
 
@@ -139,7 +133,7 @@ const HolographicSpeakerCard = ({
           {speaker.specialties.slice(0, 2).map((specialty, idx) => (
             <span
               key={idx}
-              className="text-xs px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full border border-blue-400/50 backdrop-blur-sm"
+              className="text-xs px-3 py-1 bg-indigo-500/20 text-indigo-200 rounded-full border border-indigo-400/50 backdrop-blur-sm"
             >
               {specialty}
             </span>
@@ -166,11 +160,11 @@ export function SpeakersPreview() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Effects - Matching AboutPreview */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/15 to-blue-300/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/15 to-indigo-300/25" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -184,19 +178,19 @@ export function SpeakersPreview() {
           transition={{ duration: 0.8 }}
           className="mb-24"
         >
-          <div className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-sm font-medium mb-6 shadow-2xl">
+          <div className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-sm font-medium mb-6 shadow-2xl">
             Featured Speakers
           </div>
 
           <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             Visionary Leaders
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100">
               Shaping Africa
             </span>
           </h1>
 
-          <div className="space-y-6 text-lg text-blue-50 leading-relaxed max-w-4xl">
+          <div className="space-y-6 text-lg text-indigo-50 leading-relaxed max-w-4xl">
             <p style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}>
               Engage with government leaders, industry experts, and global
               partners shaping the future of Africa&apos;s construction and real
@@ -256,13 +250,13 @@ export function SpeakersPreview() {
                 visible: { opacity: 1, scale: 1 },
               }}
               whileHover={{ scale: 1.05 }}
-              className="text-center p-6 bg-black/60 backdrop-blur-lg rounded-xl border border-white/20 hover:shadow-2xl hover:shadow-blue-500/30 hover:bg-black/70 hover:border-white/30 transition-all duration-300"
+              className="text-center p-6 bg-black/60 backdrop-blur-lg rounded-xl border border-white/20 hover:shadow-2xl hover:shadow-indigo-500/30 hover:bg-black/70 hover:border-white/30 transition-all duration-300"
             >
-              <stat.icon className="w-8 h-8 text-blue-300 mx-auto mb-3" />
+              <stat.icon className="w-8 h-8 text-indigo-300 mx-auto mb-3" />
               <div className="text-3xl font-bold text-white mb-2 drop-shadow-lg">
                 {stat.number}
               </div>
-              <div className="text-sm text-blue-200 font-medium drop-shadow-md">
+              <div className="text-sm text-indigo-200 font-medium drop-shadow-md">
                 {stat.label}
               </div>
             </motion.div>
@@ -277,15 +271,15 @@ export function SpeakersPreview() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mb-12"
         >
-          <div className="bg-black/60 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:shadow-2xl hover:shadow-blue-500/20 hover:bg-black/70 transition-all duration-300">
+          <div className="bg-black/60 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:shadow-2xl hover:shadow-indigo-500/20 hover:bg-black/70 transition-all duration-300">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-blue-500/30 border border-blue-400/50">
+              <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-indigo-500/30 border border-indigo-400/50">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 drop-shadow-lg">
                 50+ Industry Leaders
               </h3>
-              <p className="text-blue-50 mb-6 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
+              <p className="text-indigo-50 mb-6 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
                 Join conversations with ministers, CEOs, architects, and
                 investors from across Africa and beyond. Experience diverse
                 perspectives on the future of construction and real estate.
@@ -305,7 +299,7 @@ export function SpeakersPreview() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 border border-blue-400/50"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-300 border border-indigo-400/50"
           >
             <Users className="w-5 h-5" />
             Meet All Speakers

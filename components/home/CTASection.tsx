@@ -69,8 +69,8 @@ const HolographicInfoCard = ({
       transition: { duration: 0.3 },
     }}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/15 to-blue-400/10 rounded-2xl blur-xl animate-pulse" />
-    <div className="relative bg-black/60 backdrop-blur-lg border border-blue-300/40 rounded-2xl p-6 shadow-2xl">
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-indigo-500/15 to-indigo-400/10 rounded-2xl blur-xl animate-pulse" />
+    <div className="relative bg-black/60 backdrop-blur-lg border border-indigo-300/40 rounded-2xl p-6 shadow-2xl">
       <div className="bg-black/40 rounded-xl h-full flex flex-col items-center justify-center backdrop-blur-sm p-4">
         {children}
       </div>
@@ -82,11 +82,11 @@ export function CTASection() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Effects - Matching About */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/15 to-blue-300/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/15 to-indigo-300/25" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -102,7 +102,7 @@ export function CTASection() {
           {/* Header Section */}
           <motion.div variants={itemVariants} className="mb-16">
             <motion.div
-              className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-sm font-medium mb-6 shadow-2xl"
+              className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-sm font-medium mb-6 shadow-2xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -118,13 +118,13 @@ export function CTASection() {
             >
               Ready to Shape Africa&apos;s
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100">
                 Construction Future?
               </span>
             </motion.h2>
 
             <motion.p
-              className="text-xl md:text-2xl text-blue-50 max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+              className="text-xl md:text-2xl text-indigo-50 max-w-3xl mx-auto leading-relaxed drop-shadow-md"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -142,31 +142,31 @@ export function CTASection() {
             className="grid md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto"
           >
             <HolographicInfoCard delay={0.2}>
-              <Calendar className="w-12 h-12 text-blue-300 mb-4" />
+              <Calendar className="w-12 h-12 text-indigo-300 mb-4" />
               <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
                 Event Dates
               </h3>
-              <p className="text-blue-100 font-medium drop-shadow-md">
+              <p className="text-indigo-100 font-medium drop-shadow-md">
                 september 25-27, 2025
               </p>
             </HolographicInfoCard>
 
             <HolographicInfoCard delay={0.4}>
-              <MapPin className="w-12 h-12 text-blue-200 mb-4" />
+              <MapPin className="w-12 h-12 text-indigo-200 mb-4" />
               <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
                 Locations
               </h3>
-              <p className="text-blue-100 font-medium drop-shadow-md">
+              <p className="text-indigo-100 font-medium drop-shadow-md">
                 Abuja & Port Harcourt
               </p>
             </HolographicInfoCard>
 
             <HolographicInfoCard delay={0.6}>
-              <Users className="w-12 h-12 text-blue-400 mb-4" />
+              <Users className="w-12 h-12 text-indigo-400 mb-4" />
               <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
                 Expected
               </h3>
-              <p className="text-blue-100 font-medium drop-shadow-md">
+              <p className="text-indigo-100 font-medium drop-shadow-md">
                 2,000+ Professionals
               </p>
             </HolographicInfoCard>
@@ -183,9 +183,9 @@ export function CTASection() {
               initial="idle"
               whileHover="hover"
               whileTap="tap"
-              className="group relative bg-gradient-to-r from-blue-500 to-blue-600 text-white px-10 py-5 rounded-full font-bold text-lg overflow-hidden shadow-2xl border border-blue-400/50 hover:shadow-blue-500/40 transition-all duration-300"
+              className="group relative bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-10 py-5 rounded-full font-bold text-lg overflow-hidden shadow-2xl border border-indigo-400/50 hover:shadow-indigo-500/40 transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative flex items-center gap-3">
                 Register Now
                 <motion.div
@@ -207,7 +207,7 @@ export function CTASection() {
               initial="idle"
               whileHover="hover"
               whileTap="tap"
-              className="group bg-black/60 backdrop-blur-lg border-2 border-blue-300/40 text-white px-10 py-5 rounded-full font-bold text-lg hover:border-blue-300/60 hover:bg-black/70 transition-all duration-300 shadow-2xl hover:shadow-blue-500/30"
+              className="group bg-black/60 backdrop-blur-lg border-2 border-indigo-300/40 text-white px-10 py-5 rounded-full font-bold text-lg hover:border-indigo-300/60 hover:bg-black/70 transition-all duration-300 shadow-2xl hover:shadow-indigo-500/30"
             >
               <span className="flex items-center gap-3">
                 <Mail className="w-6 h-6" />
@@ -220,11 +220,11 @@ export function CTASection() {
           <motion.div variants={itemVariants} className="space-y-4">
             {/* Additional incentive */}
             <motion.div
-              className="inline-block px-6 py-3 bg-black/60 backdrop-blur-lg border border-blue-300/40 rounded-full shadow-2xl"
+              className="inline-block px-6 py-3 bg-black/60 backdrop-blur-lg border border-indigo-300/40 rounded-full shadow-2xl"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <p className="text-blue-100 text-sm font-semibold drop-shadow-md">
+              <p className="text-indigo-100 text-sm font-semibold drop-shadow-md">
                 🎉 Save up to 40% with early registration
               </p>
             </motion.div>

@@ -97,14 +97,14 @@ export default function Home() {
                 key={idx}
                 href={item.link}
                 onClick={handleMobileItemClick}
-                className="block w-full px-4 py-3 text-blue-100 hover:text-white hover:bg-black/60 rounded-lg transition-all duration-300 font-medium border border-transparent hover:border-blue-300/40"
+                className="block w-full px-4 py-3 text-indigo-100 hover:text-white hover:bg-black/60 rounded-lg transition-all duration-300 font-medium border border-transparent hover:border-indigo-300/40"
                 whileHover={{ scale: 1.02, x: 10 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {item.name}
               </motion.a>
             ))}
-            <div className="pt-4 border-t border-blue-300/20">
+            <div className="pt-4 border-t border-indigo-300/20">
               <NavbarButton
                 href="#register"
                 variant="primary"

@@ -113,7 +113,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       )}
     >
       {/* Holographic glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-blue-500/5 to-blue-400/10 rounded-full blur-xl opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 via-indigo-500/5 to-indigo-400/10 rounded-full blur-xl opacity-50" />
       <div className="relative z-10 flex w-full items-center justify-between">
         {children}
       </div>
@@ -137,7 +137,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           key={`link-${idx}`}
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-6 py-3 text-blue-100 hover:text-white transition-colors duration-300 font-medium"
+          className="relative px-6 py-3 text-indigo-100 hover:text-white transition-colors duration-300 font-medium"
           href={item.link}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -146,7 +146,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-xl bg-black/60 backdrop-blur-lg border border-blue-300/40 shadow-2xl shadow-blue-500/20"
+              className="absolute inset-0 h-full w-full rounded-xl bg-black/60 backdrop-blur-lg border border-indigo-300/40 shadow-2xl shadow-indigo-500/20"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
@@ -190,7 +190,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       )}
     >
       {/* Holographic glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-blue-500/5 to-blue-400/10 rounded-2xl blur-xl opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 via-indigo-500/5 to-indigo-400/10 rounded-2xl blur-xl opacity-50" />
       <div className="relative z-10 w-full">{children}</div>
     </motion.div>
   );
@@ -226,12 +226,12 @@ export const MobileNavMenu = ({
           exit={{ opacity: 0, y: -20, scale: 0.95 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-6 rounded-2xl bg-black/80 backdrop-blur-lg border border-blue-300/40 px-6 py-8 shadow-2xl shadow-blue-500/30",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-6 rounded-2xl bg-black/80 backdrop-blur-lg border border-indigo-300/40 px-6 py-8 shadow-2xl shadow-indigo-500/30",
             className
           )}
         >
           {/* Holographic glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/10 to-blue-400/5 rounded-2xl blur-xl opacity-70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-indigo-500/10 to-indigo-400/5 rounded-2xl blur-xl opacity-70" />
           <div className="relative z-10 w-full space-y-4">{children}</div>
         </motion.div>
       )}
@@ -251,16 +251,16 @@ export const MobileNavToggle = ({
       onClick={onClick}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="p-2 rounded-lg bg-black/60 backdrop-blur-lg border border-blue-300/40 hover:bg-black/80 hover:border-blue-300/60 transition-all duration-300 shadow-xl shadow-blue-500/20"
+      className="p-2 rounded-lg bg-black/60 backdrop-blur-lg border border-indigo-300/40 hover:bg-black/80 hover:border-indigo-300/60 transition-all duration-300 shadow-xl shadow-indigo-500/20"
     >
       <motion.div
         animate={{ rotate: isOpen ? 180 : 0 }}
         transition={{ duration: 0.3 }}
       >
         {isOpen ? (
-          <IconX className="w-6 h-6 text-blue-100" />
+          <IconX className="w-6 h-6 text-indigo-100" />
         ) : (
-          <IconMenu2 className="w-6 h-6 text-blue-100" />
+          <IconMenu2 className="w-6 h-6 text-indigo-100" />
         )}
       </motion.div>
     </motion.button>
@@ -273,13 +273,13 @@ export const NavbarLogo = () => {
       href="#"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="relative z-20 flex items-center space-x-3 px-3 py-2 rounded-ful bg-black/60 backdrop-blur-lg border border-blue-300/40 hover:bg-black/80 hover:border-blue-300/60 transition-all duration-300 shadow-xl shadow-blue-500/20"
+      className="relative z-20 flex items-center space-x-3 px-3 py-2 rounded-ful bg-black/60 backdrop-blur-lg border border-indigo-300/40 hover:bg-black/80 hover:border-indigo-300/60 transition-all duration-300 shadow-xl shadow-indigo-500/20"
     >
-      <div className="md:w-14 h-14 w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30 border border-blue-400/50">
+      <div className="md:w-16 md:h-16 w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/30 border border-indigo-400/50 overflow-hidden">
         <img src="/logo.jpg" alt="logo" />
       </div>
       <span
-        className="font-bold text-blue-100 text-lg"
+        className="font-bold text-indigo-100 text-lg"
         style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}
       >
         ACRES
@@ -323,9 +323,9 @@ export const NavbarButton = ({
       initial="idle"
       whileHover="hover"
       whileTap="tap"
-      className="group relative bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full font-bold text-lg overflow-hidden shadow-2xl border border-blue-400/50 hover:shadow-blue-500/40 transition-all duration-300"
+      className="group relative bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-3 rounded-full font-bold text-lg overflow-hidden shadow-2xl border border-indigo-400/50 hover:shadow-indigo-500/40 transition-all duration-300"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <span className="relative flex items-center gap-3">
         <Tag href={href || undefined}>{children}</Tag>
         <motion.div

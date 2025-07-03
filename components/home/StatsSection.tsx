@@ -1,10 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // components/StatsSection.tsx
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { TrendingUp, Building2, Users, Globe, Handshake, Award } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import {
+  TrendingUp,
+  Building2,
+  Users,
+  Globe,
+  Handshake,
+  Award,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface Stat {
   icon: any;
@@ -17,52 +24,58 @@ interface Stat {
 const stats: Stat[] = [
   {
     icon: Users,
-    value: '5000+',
-    label: 'Expected Attendees',
-    description: 'Industry professionals, investors, and government officials',
-    color: 'from-blue-400 to-blue-500'
+    value: "5000+",
+    label: "Expected Attendees",
+    description: "Industry professionals, investors, and government officials",
+    color: "from-indigo-400 to-indigo-500",
   },
   {
     icon: Building2,
-    value: '$2.5B',
-    label: 'Investment Opportunities',
-    description: 'Showcased projects and funding opportunities',
-    color: 'from-blue-300 to-blue-400'
+    value: "$2.5B",
+    label: "Investment Opportunities",
+    description: "Showcased projects and funding opportunities",
+    color: "from-indigo-300 to-indigo-400",
   },
   {
     icon: Globe,
-    value: '40+',
-    label: 'Countries Represented',
-    description: 'Pan-African and international participation',
-    color: 'from-blue-500 to-blue-600'
+    value: "40+",
+    label: "Countries Represented",
+    description: "Pan-African and international participation",
+    color: "from-indigo-500 to-indigo-600",
   },
   {
     icon: Handshake,
-    value: '200+',
-    label: 'Strategic Partnerships',
-    description: 'Business connections and collaborations formed',
-    color: 'from-blue-200 to-blue-300'
+    value: "200+",
+    label: "Strategic Partnerships",
+    description: "Business connections and collaborations formed",
+    color: "from-indigo-200 to-indigo-300",
   },
   {
     icon: TrendingUp,
-    value: '95%',
-    label: 'Satisfaction Rate',
-    description: 'From previous ACRES events',
-    color: 'from-blue-400 to-blue-600'
+    value: "95%",
+    label: "Satisfaction Rate",
+    description: "From previous ACRES events",
+    color: "from-indigo-400 to-indigo-600",
   },
   {
     icon: Award,
-    value: '50+',
-    label: 'Industry Awards',
-    description: 'Recognizing excellence and innovation',
-    color: 'from-blue-300 to-blue-500'
-  }
+    value: "50+",
+    label: "Industry Awards",
+    description: "Recognizing excellence and innovation",
+    color: "from-indigo-300 to-indigo-500",
+  },
 ];
 
-function AnimatedCounter({ target, duration = 2 }: { target: string; duration?: number }) {
+function AnimatedCounter({
+  target,
+  duration = 2,
+}: {
+  target: string;
+  duration?: number;
+}) {
   const [count, setCount] = useState(0);
-  const numericValue = parseInt(target.replace(/[^\d]/g, ''));
-  const suffix = target.replace(/[\d]/g, '');
+  const numericValue = parseInt(target.replace(/[^\d]/g, ""));
+  const suffix = target.replace(/[\d]/g, "");
 
   useEffect(() => {
     let startTime: number;
@@ -71,7 +84,7 @@ function AnimatedCounter({ target, duration = 2 }: { target: string; duration?: 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      
+
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(numericValue * easeOutQuart));
 
@@ -84,11 +97,22 @@ function AnimatedCounter({ target, duration = 2 }: { target: string; duration?: 
     return () => cancelAnimationFrame(animationFrame);
   }, [numericValue, duration]);
 
-  return <span>{count}{suffix}</span>;
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
+  );
 }
 
 // Holographic Card Component
-const HolographicStatCard = ({ stat, index }: { stat: Stat; index: number }) => (
+const HolographicStatCard = ({
+  stat,
+  index,
+}: {
+  stat: Stat;
+  index: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, rotateY: -30, scale: 0.8 }}
     whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
@@ -104,14 +128,15 @@ const HolographicStatCard = ({ stat, index }: { stat: Stat; index: number }) => 
     className="group relative"
   >
     {/* Holographic glow effect */}
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/15 to-blue-400/10 rounded-2xl blur-xl animate-pulse group-hover:blur-2xl transition-all duration-500" />
-    
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-indigo-500/15 to-indigo-400/10 rounded-2xl blur-xl animate-pulse group-hover:blur-2xl transition-all duration-500" />
+
     {/* Main card */}
-    <div className="relative bg-black/60 backdrop-blur-lg border border-blue-300/40 rounded-2xl p-1 shadow-2xl hover:shadow-blue-500/30 transition-all duration-500">
-      <div className="bg-black/40 rounded-xl h-full p-8 backdrop-blur-sm border border-white/10 hover:border-blue-300/50 transition-all duration-300">
-        
+    <div className="relative bg-black/60 backdrop-blur-lg border border-indigo-300/40 rounded-2xl p-1 shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500">
+      <div className="bg-black/40 rounded-xl h-full p-8 backdrop-blur-sm border border-white/10 hover:border-indigo-300/50 transition-all duration-300">
         {/* Icon */}
-        <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${stat.color} mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-blue-500/30 border border-blue-400/50`}>
+        <div
+          className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${stat.color} mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-indigo-500/30 border border-indigo-400/50`}
+        >
           <stat.icon className="w-8 h-8 text-white" />
         </div>
 
@@ -123,18 +148,20 @@ const HolographicStatCard = ({ stat, index }: { stat: Stat; index: number }) => 
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
         >
-          <span className={`bg-gradient-to-r ${stat.color} bg-clip-text text-transparent drop-shadow-lg`}>
+          <span
+            className={`bg-gradient-to-r ${stat.color} bg-clip-text text-transparent drop-shadow-lg`}
+          >
             <AnimatedCounter target={stat.value} />
           </span>
         </motion.div>
 
         {/* Label */}
-        <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-300 transition-colors drop-shadow-lg">
+        <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-indigo-300 transition-colors drop-shadow-lg">
           {stat.label}
         </h3>
 
         {/* Description */}
-        <p className="text-blue-50 leading-relaxed drop-shadow-md">
+        <p className="text-indigo-50 leading-relaxed drop-shadow-md">
           {stat.description}
         </p>
 
@@ -151,11 +178,11 @@ export function StatsSection() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden py-20">
       {/* Background Effects - Matching AboutPreview */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/15 to-blue-300/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/15 to-indigo-300/25" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -169,20 +196,24 @@ export function StatsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-sm font-medium mb-6 shadow-2xl">
+          <div className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-sm font-medium mb-6 shadow-2xl">
             Our Impact
           </div>
-          
+
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Impact by
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100">
               Numbers
             </span>
           </h2>
-          
-          <p className="text-xl text-blue-50 max-w-3xl mx-auto leading-relaxed" style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}>
-            ACRES continues to drive transformation across Africa&apos;s construction and real estate sectors
+
+          <p
+            className="text-xl text-indigo-50 max-w-3xl mx-auto leading-relaxed"
+            style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}
+          >
+            ACRES continues to drive transformation across Africa&apos;s
+            construction and real estate sectors
           </p>
         </motion.div>
 
@@ -204,7 +235,7 @@ export function StatsSection() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 border border-blue-400/50"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-300 border border-indigo-400/50"
           >
             Join the Movement
             <TrendingUp className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

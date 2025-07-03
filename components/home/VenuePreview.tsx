@@ -48,8 +48,8 @@ const HolographicShape = ({
       transition: { duration: 0.3 },
     }}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/15 to-blue-400/10 rounded-xl blur-xl animate-pulse" />
-    <div className="relative bg-black/60 backdrop-blur-lg border border-blue-300/40 rounded-xl p-1 shadow-2xl">
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-indigo-500/15 to-indigo-400/10 rounded-xl blur-xl animate-pulse" />
+    <div className="relative bg-black/60 backdrop-blur-lg border border-indigo-300/40 rounded-xl p-1 shadow-2xl">
       <div className="bg-black/40 rounded-lg h-full flex items-center justify-center backdrop-blur-sm">
         {children}
       </div>
@@ -61,11 +61,11 @@ export function VenuePreview() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/15 to-blue-300/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/15 to-indigo-300/25" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -81,19 +81,19 @@ export function VenuePreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-sm font-medium mb-6 shadow-2xl">
+              <div className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-sm font-medium mb-6 shadow-2xl">
                 Venue & Program
               </div>
 
               <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
                 ACRES 2025
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100">
                   Venue & Program
                 </span>
               </h1>
 
-              <div className="space-y-6 text-lg text-blue-50 leading-relaxed">
+              <div className="space-y-6 text-lg text-indigo-50 leading-relaxed">
                 <p style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}>
                   Join us for the inaugural African Construction and Real Estate
                   Exhibition/Summit across two key Nigerian cities.
@@ -111,19 +111,19 @@ export function VenuePreview() {
           <div className="relative">
             <div className="grid grid-cols-2 gap-8 max-w-md mx-auto">
               <HolographicShape className="h-48" delay={0.2}>
-                <Building2 className="w-16 h-16 text-blue-300" />
+                <Building2 className="w-16 h-16 text-indigo-300" />
               </HolographicShape>
 
               <HolographicShape className="h-48 mt-12" delay={0.4}>
-                <MapPin className="w-16 h-16 text-blue-200" />
+                <MapPin className="w-16 h-16 text-indigo-200" />
               </HolographicShape>
 
               <HolographicShape className="h-48 -mt-6" delay={0.6}>
-                <Calendar className="w-16 h-16 text-blue-400" />
+                <Calendar className="w-16 h-16 text-indigo-400" />
               </HolographicShape>
 
               <HolographicShape className="h-48 mt-6" delay={0.8}>
-                <Presentation className="w-16 h-16 text-blue-100" />
+                <Presentation className="w-16 h-16 text-indigo-100" />
               </HolographicShape>
             </div>
           </div>
@@ -141,7 +141,7 @@ export function VenuePreview() {
             <h3 className="text-3xl font-bold text-white mb-4 drop-shadow-lg">
               Event Locations
             </h3>
-            <p className="text-blue-50 max-w-2xl mx-auto drop-shadow-md">
+            <p className="text-indigo-50 max-w-2xl mx-auto drop-shadow-md">
               ACRES will be hosted annually, with the inaugural event taking
               place in Port Harcourt & Abuja, Nigeria.
             </p>
@@ -156,18 +156,18 @@ export function VenuePreview() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * index }}
                 whileHover={{ scale: 1.05, y: -8 }}
-                className="group bg-black/60 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-blue-300/50 transition-all duration-300 text-center hover:shadow-2xl hover:shadow-blue-500/20 hover:bg-black/70"
+                className="group bg-black/60 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-indigo-300/50 transition-all duration-300 text-center hover:shadow-2xl hover:shadow-indigo-500/20 hover:bg-black/70"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-blue-500/30 border border-blue-400/50">
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-indigo-500/30 border border-indigo-400/50">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors drop-shadow-lg">
+                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors drop-shadow-lg">
                   {venue.city}
                 </h4>
-                <p className="text-blue-200 text-lg mb-4 drop-shadow-md">
+                <p className="text-indigo-200 text-lg mb-4 drop-shadow-md">
                   {venue.country}
                 </p>
-                <div className="flex items-center justify-center gap-2 text-blue-100">
+                <div className="flex items-center justify-center gap-2 text-indigo-100">
                   <Calendar className="w-4 h-4" />
                   <span className="drop-shadow-md">{venue.date}</span>
                 </div>
@@ -186,7 +186,7 @@ export function VenuePreview() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 border border-blue-400/50"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-300 border border-indigo-400/50"
           >
             <Calendar className="w-5 h-5" />
             Register for ACRES 2025

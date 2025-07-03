@@ -29,8 +29,8 @@ const partnerCategories: PartnerCategory[] = [
   {
     title: "Government Partners",
     icon: Landmark,
-    color: "from-blue-500 to-blue-600",
-    iconColor: "text-blue-300",
+    color: "from-indigo-500 to-indigo-600",
+    iconColor: "text-indigo-300",
     description:
       "Endorsed by ministries and public agencies across African countries committed to sustainable urban development.",
     count: "Multiple National Governments",
@@ -43,8 +43,8 @@ const partnerCategories: PartnerCategory[] = [
   {
     title: "Financial Institutions",
     icon: TrendingUp,
-    color: "from-blue-600 to-blue-700",
-    iconColor: "text-blue-400",
+    color: "from-indigo-600 to-indigo-700",
+    iconColor: "text-indigo-400",
     description:
       "Banks and development finance institutions supporting infrastructure and real estate investment across Africa.",
     count: "AfDB, IFC, and more",
@@ -57,8 +57,8 @@ const partnerCategories: PartnerCategory[] = [
   {
     title: "International Organizations",
     icon: Globe,
-    color: "from-blue-300 to-blue-400",
-    iconColor: "text-blue-100",
+    color: "from-indigo-300 to-indigo-400",
+    iconColor: "text-indigo-100",
     description:
       "Global institutions partnering to promote housing, sustainability, and real estate excellence in Africa.",
     count: "Global Support Partners",
@@ -67,8 +67,8 @@ const partnerCategories: PartnerCategory[] = [
   {
     title: "Industry Associations",
     icon: Building2,
-    color: "from-blue-400 to-blue-500",
-    iconColor: "text-blue-200",
+    color: "from-indigo-400 to-indigo-500",
+    iconColor: "text-indigo-200",
     description:
       "Professional bodies advancing construction, engineering, and real estate practice across the continent.",
     count: "Regional Associations",
@@ -83,9 +83,9 @@ const partnerCategories: PartnerCategory[] = [
 const sponsorshipTiers = [
   {
     tier: "Platinum",
-    color: "from-blue-400 to-blue-500",
-    borderColor: "border-blue-300/40",
-    glowColor: "shadow-blue-500/30",
+    color: "from-indigo-400 to-indigo-500",
+    borderColor: "border-indigo-300/40",
+    glowColor: "shadow-indigo-500/30",
     benefits: "5",
     companies: [
       "African Development Bank (AfDB)",
@@ -94,17 +94,17 @@ const sponsorshipTiers = [
   },
   {
     tier: "Gold",
-    color: "from-blue-500 to-blue-600",
-    borderColor: "border-blue-400/50",
-    glowColor: "shadow-blue-500/40",
+    color: "from-indigo-500 to-indigo-600",
+    borderColor: "border-indigo-400/50",
+    glowColor: "shadow-indigo-500/40",
     benefits: "8",
     companies: ["UN-Habitat", "World Bank Group"],
   },
   {
     tier: "Silver",
-    color: "from-blue-600 to-blue-700",
-    borderColor: "border-blue-500/60",
-    glowColor: "shadow-blue-500/50",
+    color: "from-indigo-600 to-indigo-700",
+    borderColor: "border-indigo-500/60",
+    glowColor: "shadow-indigo-500/50",
     benefits: "12",
     companies: [
       "African Real Estate Society (AFRES)",
@@ -138,8 +138,8 @@ const HolographicPartnerCard = ({
       transition: { duration: 0.3 },
     }}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/15 to-blue-400/10 rounded-2xl blur-xl animate-pulse" />
-    <div className="relative bg-black/60 backdrop-blur-lg border border-blue-300/40 rounded-2xl p-6 shadow-2xl hover:shadow-blue-500/30 hover:border-blue-300/60 transition-all duration-300 h-full">
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-indigo-500/15 to-indigo-400/10 rounded-2xl blur-xl animate-pulse" />
+    <div className="relative bg-black/60 backdrop-blur-lg border border-indigo-300/40 rounded-2xl p-6 shadow-2xl hover:shadow-indigo-500/30 hover:border-indigo-300/60 transition-all duration-300 h-full">
       <div className="bg-black/40 rounded-xl h-full flex flex-col backdrop-blur-sm p-4">
         {children}
       </div>
@@ -151,11 +151,11 @@ export function PartnersPreview() {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Effects - Matching About/CTA */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/15 to-blue-300/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/15 to-indigo-300/25" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -207,7 +207,7 @@ export function PartnersPreview() {
           {partnerCategories.map((category, index) => (
             <HolographicPartnerCard key={index} delay={index * 0.2}>
               <div
-                className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center mb-6 shadow-2xl border border-blue-400/50`}
+                className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center mb-6 shadow-2xl border border-indigo-400/50`}
               >
                 <category.icon className={`w-8 h-8 ${category.iconColor}`} />
               </div>
@@ -216,12 +216,12 @@ export function PartnersPreview() {
                 {category.title}
               </h3>
 
-              <p className="text-blue-100 text-sm mb-4 leading-relaxed drop-shadow-md">
+              <p className="text-indigo-100 text-sm mb-4 leading-relaxed drop-shadow-md">
                 {category.description}
               </p>
 
               <div className="mb-4">
-                <span className="inline-block bg-black/60 backdrop-blur-lg text-blue-200 text-sm font-semibold px-3 py-2 rounded-full border border-blue-300/40 shadow-lg">
+                <span className="inline-block bg-black/60 backdrop-blur-lg text-indigo-200 text-sm font-semibold px-3 py-2 rounded-full border border-indigo-300/40 shadow-lg">
                   {category.count}
                 </span>
               </div>
@@ -230,14 +230,14 @@ export function PartnersPreview() {
                 {category.partners.slice(0, 3).map((partner, idx) => (
                   <div
                     key={idx}
-                    className="text-sm text-blue-50 flex items-center gap-2 drop-shadow-md"
+                    className="text-sm text-indigo-50 flex items-center gap-2 drop-shadow-md"
                   >
-                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full shadow-sm"></div>
+                    <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full shadow-sm"></div>
                     {partner}
                   </div>
                 ))}
                 {category.partners.length > 3 && (
-                  <div className="text-sm text-blue-200/70 italic drop-shadow-md">
+                  <div className="text-sm text-indigo-200/70 italic drop-shadow-md">
                     +{category.partners.length - 3} more partners
                   </div>
                 )}
@@ -256,7 +256,7 @@ export function PartnersPreview() {
         >
           <div className="text-center mb-16">
             <motion.div
-              className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-sm font-medium mb-6 shadow-2xl rounded-full"
+              className="inline-block px-4 py-2 bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-sm font-medium mb-6 shadow-2xl rounded-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -264,10 +264,10 @@ export function PartnersPreview() {
               Sponsorship Opportunities
             </motion.div>
 
-            <h3 className="text-4xl lg:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 drop-shadow-lg">
+            <h3 className="text-4xl lg:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100 drop-shadow-lg">
               Sponsorship Tiers
             </h3>
-            <p className="text-blue-50 text-xl max-w-2xl mx-auto drop-shadow-md">
+            <p className="text-indigo-50 text-xl max-w-2xl mx-auto drop-shadow-md">
               Join our prestigious sponsors and showcase your commitment to
               Africa&apos;s construction and real estate future.
             </p>
@@ -284,12 +284,12 @@ export function PartnersPreview() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/15 to-blue-400/10 rounded-2xl blur-xl animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-indigo-500/15 to-indigo-400/10 rounded-2xl blur-xl animate-pulse" />
                 <div
                   className={`relative bg-black/60 backdrop-blur-lg rounded-2xl p-8 ${tier.borderColor} border-2 hover:${tier.glowColor} hover:shadow-2xl transition-all duration-300 text-center`}
                 >
                   <div
-                    className={`w-20 h-20 bg-gradient-to-br ${tier.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl border border-blue-400/50`}
+                    className={`w-20 h-20 bg-gradient-to-br ${tier.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl border border-indigo-400/50`}
                   >
                     <Award className="w-10 h-10 text-white" />
                   </div>
@@ -297,7 +297,7 @@ export function PartnersPreview() {
                   <h4 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
                     {tier.tier}
                   </h4>
-                  <p className="text-blue-100 mb-6 drop-shadow-md">
+                  <p className="text-indigo-100 mb-6 drop-shadow-md">
                     {tier.benefits} Premium Benefits
                   </p>
 
@@ -305,7 +305,7 @@ export function PartnersPreview() {
                     {tier.companies.map((company, idx) => (
                       <div
                         key={idx}
-                        className="text-sm text-blue-50 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-lg border border-blue-300/20 drop-shadow-md"
+                        className="text-sm text-indigo-50 bg-black/40 backdrop-blur-sm px-3 py-2 rounded-lg border border-indigo-300/20 drop-shadow-md"
                       >
                         {company}
                       </div>
@@ -315,7 +315,7 @@ export function PartnersPreview() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r ${tier.color} text-white py-3 rounded-xl font-semibold hover:shadow-2xl hover:${tier.glowColor} transition-all duration-300 border border-blue-400/50`}
+                    className={`w-full bg-gradient-to-r ${tier.color} text-white py-3 rounded-xl font-semibold hover:shadow-2xl hover:${tier.glowColor} transition-all duration-300 border border-indigo-400/50`}
                   >
                     Join {tier.tier}
                   </motion.button>
@@ -327,17 +327,17 @@ export function PartnersPreview() {
 
         {/* Partnership Impact Stats */}
         <motion.div
-          className="bg-black/60 backdrop-blur-lg rounded-3xl p-8 mb-16 border border-blue-300/40 shadow-2xl"
+          className="bg-black/60 backdrop-blur-lg rounded-3xl p-8 mb-16 border border-indigo-300/40 shadow-2xl"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.7 }}
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 drop-shadow-lg">
+            <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-indigo-200 to-indigo-100 drop-shadow-lg">
               Partnership Impact
             </h3>
-            <p className="text-blue-50 text-lg drop-shadow-md">
+            <p className="text-indigo-50 text-lg drop-shadow-md">
               Together, we&apos;re transforming Africa&apos;s built environment
             </p>
           </div>
@@ -362,13 +362,13 @@ export function PartnersPreview() {
                 className="text-center group"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-2xl border border-blue-400/50 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-2xl border border-indigo-400/50 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl lg:text-4xl font-bold text-white mb-2 drop-shadow-lg">
                   {stat.number}
                 </div>
-                <div className="text-sm text-blue-200 font-medium drop-shadow-md">
+                <div className="text-sm text-indigo-200 font-medium drop-shadow-md">
                   {stat.label}
                 </div>
               </motion.div>
@@ -387,7 +387,7 @@ export function PartnersPreview() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-12 py-6 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 border border-blue-400/50"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-12 py-6 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-300 border border-indigo-400/50"
           >
             <Handshake className="w-7 h-7" />
             Become a Partner
