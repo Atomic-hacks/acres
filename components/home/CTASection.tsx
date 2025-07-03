@@ -51,7 +51,11 @@ interface HolographicInfoCardProps {
 }
 
 // Holographic 3D Shape Components
-const HolographicInfoCard = ({ children, className = "", delay = 0 }:HolographicInfoCardProps) => (
+const HolographicInfoCard = ({
+  children,
+  className = "",
+  delay = 0,
+}: HolographicInfoCardProps) => (
   <motion.div
     className={`relative ${className}`}
     initial={{ opacity: 0, rotateY: -30, scale: 0.8 }}
@@ -139,20 +143,32 @@ export function CTASection() {
           >
             <HolographicInfoCard delay={0.2}>
               <Calendar className="w-12 h-12 text-blue-300 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">Event Dates</h3>
-              <p className="text-blue-100 font-medium drop-shadow-md">March 15-16, 2025</p>
+              <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
+                Event Dates
+              </h3>
+              <p className="text-blue-100 font-medium drop-shadow-md">
+                september 25-27, 2025
+              </p>
             </HolographicInfoCard>
 
             <HolographicInfoCard delay={0.4}>
               <MapPin className="w-12 h-12 text-blue-200 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">Locations</h3>
-              <p className="text-blue-100 font-medium drop-shadow-md">Abuja & Port Harcourt</p>
+              <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
+                Locations
+              </h3>
+              <p className="text-blue-100 font-medium drop-shadow-md">
+                Abuja & Port Harcourt
+              </p>
             </HolographicInfoCard>
 
             <HolographicInfoCard delay={0.6}>
               <Users className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">Expected</h3>
-              <p className="text-blue-100 font-medium drop-shadow-md">2,000+ Professionals</p>
+              <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
+                Expected
+              </h3>
+              <p className="text-blue-100 font-medium drop-shadow-md">
+                2,000+ Professionals
+              </p>
             </HolographicInfoCard>
           </motion.div>
 
@@ -201,14 +217,7 @@ export function CTASection() {
           </motion.div>
 
           {/* Bottom Note */}
-          <motion.div
-            variants={itemVariants}
-            className="space-y-4"
-          >
-            <p className="text-blue-200/80 text-lg font-medium drop-shadow-md">
-              Early bird pricing available until February 1st, 2025
-            </p>
-            
+          <motion.div variants={itemVariants} className="space-y-4">
             {/* Additional incentive */}
             <motion.div
               className="inline-block px-6 py-3 bg-black/60 backdrop-blur-lg border border-blue-300/40 rounded-full shadow-2xl"

@@ -158,7 +158,9 @@ export function HeroSection() {
           className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/60 backdrop-blur-lg border border-blue-300/40 text-blue-100 text-xs sm:text-sm font-medium shadow-2xl mb-6 sm:mb-8"
         >
           <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-          <span className="text-center">March 15-16, 2025 • Abuja & Port Harcourt</span>
+          <span className="text-center">
+            september 25-27, 2025 • Abuja & Port Harcourt
+          </span>
         </motion.div>
 
         {/* ACRES Title with responsive sizing */}
@@ -196,9 +198,8 @@ export function HeroSection() {
             textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)",
           }}
         >
-          Connecting Africa&apos;s construction and real estate leaders,
-          investors, and innovators to build the continent&apos;s sustainable
-          future.
+          Building Africa’s Future — Where real estate leaders, investors, and
+          innovators unite for sustainable growth.
         </motion.p>
 
         {/* Buttons with better mobile spacing */}
@@ -265,7 +266,7 @@ export function HeroSection() {
             textShadow: "0 2px 10px rgba(0, 0, 0, 0.9)",
           }}
         >
-          <div className="text-center sm:text-left">March 15-16, 2025</div>
+          <div className="text-center sm:text-left">september 25-27, 2025</div>
           <div className="hidden sm:block w-32 md:w-48 h-px bg-white/50 shadow-lg" />
           <div className="text-center sm:text-right">Abuja & Port Harcourt</div>
         </motion.div>

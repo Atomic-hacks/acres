@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Linkedin,
-  Twitter,
   Award,
   Building,
   MapPin,
@@ -13,77 +11,62 @@ import {
 
 const featuredSpeakers = [
   {
-    name: "Dr. Amina Hassan",
-    title: "Chief Executive Officer",
-    company: "AfriCorp Real Estate",
-    location: "Lagos, Nigeria",
-    image: "/api/placeholder/300/300",
-    bio: "Leading Africa's largest real estate development firm with over $2B in completed projects across 12 countries.",
-    specialties: [
-      "PropTech Innovation",
-      "Sustainable Development",
-      "Pan-African Investment",
-    ],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-    },
-    featured: true,
-    color: "from-blue-400 to-blue-500",
-  },
-  {
-    name: "Minister John Okafor",
+    name: "Featured Government Leader",
     title: "Minister of Housing & Urban Development",
-    company: "Federal Republic of Nigeria",
+    company: "Federal Government of Nigeria",
     location: "Abuja, Nigeria",
     image: "/api/placeholder/300/300",
-    bio: "Spearheading Nigeria's national housing policy and infrastructure development initiatives worth $5B+.",
+    bio: "Overseeing national housing and infrastructure policies driving urban development and sustainability efforts in Nigeria.",
     specialties: [
-      "Policy & Regulation",
-      "Infrastructure Development",
-      "Public-Private Partnerships",
+      "Public Policy",
+      "Urban Infrastructure",
+      "Affordable Housing",
     ],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-    },
+    social: {},
     featured: true,
     color: "from-blue-500 to-blue-600",
   },
   {
-    name: "Prof. Kwame Asante",
-    title: "Director of Sustainable Architecture",
-    company: "Ghana Institute of Technology",
-    location: "Accra, Ghana",
+    name: "International Finance Expert",
+    title: "Senior Investment Officer",
+    company: "International Finance Corporation (IFC)",
+    location: "Washington, D.C., USA",
     image: "/api/placeholder/300/300",
-    bio: "Pioneering sustainable building materials research and green construction practices across West Africa.",
+    bio: "Championing sustainable real estate investment strategies across African markets through IFC-backed initiatives.",
     specialties: [
-      "Sustainable Materials",
-      "Green Building",
-      "Research & Development",
+      "Impact Investment",
+      "Sustainable Finance",
+      "Project Structuring",
     ],
-    social: {
-      linkedin: "#",
-    },
+    social: {},
+    featured: true,
+    color: "from-blue-400 to-blue-500",
+  },
+  {
+    name: "Urban Development Specialist",
+    title: "Program Officer",
+    company: "UN-Habitat",
+    location: "Nairobi, Kenya",
+    image: "/api/placeholder/300/300",
+    bio: "Driving global initiatives in sustainable urban planning, housing accessibility, and smart city frameworks in African cities.",
+    specialties: ["Sustainability", "Smart Cities", "Urban Planning"],
+    social: {},
     featured: true,
     color: "from-blue-300 to-blue-400",
   },
   {
-    name: "Sarah Mwangi",
-    title: "Managing Partner",
-    company: "East Africa Property Fund",
-    location: "Nairobi, Kenya",
+    name: "Academic Partner",
+    title: "Professor of Real Estate & Urban Studies",
+    company: "African Real Estate Society (AFRES)",
+    location: "Cape Town, South Africa",
     image: "/api/placeholder/300/300",
-    bio: "Managing $800M+ in real estate investments across East Africa with focus on affordable housing.",
+    bio: "Conducting cutting-edge research and capacity-building for Africa’s next generation of real estate professionals.",
     specialties: [
-      "Investment Strategy",
-      "Affordable Housing",
-      "Market Analysis",
+      "Education & Research",
+      "Urban Studies",
+      "Workforce Development",
     ],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-    },
+    social: {},
     featured: false,
     color: "from-blue-200 to-blue-300",
   },
@@ -127,31 +110,6 @@ const HolographicSpeakerCard = ({
                 .join("")}
             </span>
           </div>
-
-          {/* Social Icons Overlay */}
-          <motion.div
-            className="absolute -bottom-2 -right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            initial={false}
-          >
-            {speaker.social.linkedin && (
-              <motion.a
-                href={speaker.social.linkedin}
-                whileHover={{ scale: 1.1 }}
-                className="w-8 h-8 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-300 hover:bg-blue-500/20 transition-colors border border-blue-400/50"
-              >
-                <Linkedin className="w-4 h-4" />
-              </motion.a>
-            )}
-            {speaker.social.twitter && (
-              <motion.a
-                href={speaker.social.twitter}
-                whileHover={{ scale: 1.1 }}
-                className="w-8 h-8 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-300 hover:bg-blue-500/20 transition-colors border border-blue-400/50"
-              >
-                <Twitter className="w-4 h-4" />
-              </motion.a>
-            )}
-          </motion.div>
         </div>
       </div>
 
@@ -240,14 +198,13 @@ export function SpeakersPreview() {
 
           <div className="space-y-6 text-lg text-blue-50 leading-relaxed max-w-4xl">
             <p style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}>
-              Meet the industry pioneers, government officials, and thought
-              leaders who are transforming Africa&apos;s construction and real
-              estate landscape.
+              Engage with government leaders, industry experts, and global
+              partners shaping the future of Africa&apos;s construction and real
+              estate sectors.
             </p>
             <p style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}>
-              Connect with visionaries driving billions in investments across
-              25+ African countries while fostering sustainable urban
-              development and innovation.
+              Discover the collaborations, insights, and innovations driving
+              sustainable urban growth and investment across the continent.
             </p>
           </div>
         </motion.div>

@@ -31,27 +31,13 @@ const partnerCategories: PartnerCategory[] = [
     icon: Landmark,
     color: "from-blue-500 to-blue-600",
     iconColor: "text-blue-300",
-    description: "Official support from ministries and agencies across Africa",
-    count: "15+ Governments",
+    description:
+      "Endorsed by ministries and public agencies across African countries committed to sustainable urban development.",
+    count: "Multiple National Governments",
     partners: [
-      "Ministry of Housing & Urban Dev. (Nigeria)",
-      "Department of Public Works (South Africa)",
-      "Ministry of Infrastructure (Kenya)",
-      "Urban Development Authority (Ghana)",
-    ],
-  },
-  {
-    title: "Corporate Sponsors",
-    icon: Building2,
-    color: "from-blue-400 to-blue-500",
-    iconColor: "text-blue-200",
-    description: "Leading construction and real estate companies",
-    count: "50+ Companies",
-    partners: [
-      "Dangote Group",
-      "Lafarge Africa",
-      "ARM Properties",
-      "Actis Capital",
+      "Ministries of Housing & Urban Development",
+      "Ministries of Infrastructure",
+      "Urban Development Agencies",
     ],
   },
   {
@@ -59,13 +45,13 @@ const partnerCategories: PartnerCategory[] = [
     icon: TrendingUp,
     color: "from-blue-600 to-blue-700",
     iconColor: "text-blue-400",
-    description: "Banks and investment firms driving African development",
-    count: "25+ Institutions",
+    description:
+      "Banks and development finance institutions supporting infrastructure and real estate investment across Africa.",
+    count: "AfDB, IFC, and more",
     partners: [
-      "African Development Bank",
-      "Standard Bank Group",
-      "Ecobank Transnational",
-      "Development Bank of Nigeria",
+      "African Development Bank (AfDB)",
+      "World Bank Group",
+      "International Finance Corporation (IFC)",
     ],
   },
   {
@@ -73,13 +59,23 @@ const partnerCategories: PartnerCategory[] = [
     icon: Globe,
     color: "from-blue-300 to-blue-400",
     iconColor: "text-blue-100",
-    description: "Global partners supporting African growth",
-    count: "20+ Organizations",
+    description:
+      "Global institutions partnering to promote housing, sustainability, and real estate excellence in Africa.",
+    count: "Global Support Partners",
+    partners: ["UN-Habitat", "International Real Estate Federation (FIABCI)"],
+  },
+  {
+    title: "Industry Associations",
+    icon: Building2,
+    color: "from-blue-400 to-blue-500",
+    iconColor: "text-blue-200",
+    description:
+      "Professional bodies advancing construction, engineering, and real estate practice across the continent.",
+    count: "Regional Associations",
     partners: [
-      "World Bank Group",
-      "UN-Habitat",
-      "International Finance Corporation",
-      "African Union Development Agency",
+      "African Real Estate Society (AFRES)",
+      "Federation of African Engineering Organizations",
+      "Corea",
     ],
   },
 ];
@@ -91,7 +87,10 @@ const sponsorshipTiers = [
     borderColor: "border-blue-300/40",
     glowColor: "shadow-blue-500/30",
     benefits: "5",
-    companies: ["Dangote Group", "Lafarge Africa"],
+    companies: [
+      "African Development Bank (AfDB)",
+      "International Finance Corporation (IFC)",
+    ],
   },
   {
     tier: "Gold",
@@ -99,7 +98,7 @@ const sponsorshipTiers = [
     borderColor: "border-blue-400/50",
     glowColor: "shadow-blue-500/40",
     benefits: "8",
-    companies: ["Standard Bank", "Ecobank", "ARM Properties"],
+    companies: ["UN-Habitat", "World Bank Group"],
   },
   {
     tier: "Silver",
@@ -107,7 +106,10 @@ const sponsorshipTiers = [
     borderColor: "border-blue-500/60",
     glowColor: "shadow-blue-500/50",
     benefits: "12",
-    companies: ["Multiple Regional Partners"],
+    companies: [
+      "African Real Estate Society (AFRES)",
+      "Federation of African Engineering Organizations",
+    ],
   },
 ];
 

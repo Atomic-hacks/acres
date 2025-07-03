@@ -4,76 +4,38 @@
 import { motion } from "framer-motion";
 import {
   Calendar,
-  Clock,
   Users,
   ArrowRight,
   Award,
   Handshake,
+  Building2,
 } from "lucide-react";
 
 const programHighlights = [
   {
-    day: "Day 1",
-    date: "March 15, 2024",
-    theme: "Innovation & Technology",
-    icon: Award,
+    day: "Exhibition",
+    theme: "Showcase Products, Innovations & Services",
+    icon: Building2,
     color: "from-blue-400 to-blue-500",
-    events: [
-      {
-        time: "09:00 AM",
-        title: "Opening Keynote: The Future of African Construction",
-        speaker: "Dr. Amina Hassan",
-        type: "Keynote",
-      },
-      {
-        time: "11:30 AM",
-        title: "PropTech Revolution: Digital Transformation in Real Estate",
-        speaker: "Panel Discussion",
-        type: "Panel",
-      },
-      {
-        time: "02:00 PM",
-        title: "Sustainable Building Materials: African Innovations",
-        speaker: "Prof. Kwame Asante",
-        type: "Workshop",
-      },
-    ],
+    description:
+      "A space where companies can showcase products, innovations, and services.",
   },
   {
-    day: "Day 2",
-    date: "March 16, 2024",
-    theme: "Investment & Partnerships",
-    icon: Handshake,
+    day: "Summit",
+    theme: "Keynotes, Panels & Workshops",
+    icon: Award,
     color: "from-blue-300 to-blue-400",
-    events: [
-      {
-        time: "09:00 AM",
-        title: "Mega Projects: Infrastructure Development Across Africa",
-        speaker: "Minister John Okafor",
-        type: "Keynote",
-      },
-      {
-        time: "11:00 AM",
-        title: "Real Estate Investment Trusts (REITs) in Africa",
-        speaker: "Financial Experts Panel",
-        type: "Panel",
-      },
-      {
-        time: "03:00 PM",
-        title: "Networking & Deal-Making Sessions",
-        speaker: "All Attendees",
-        type: "Networking",
-      },
-    ],
+    description:
+      "A series of keynote speeches, panel discussions, and workshops addressing critical topics like urbanization, sustainability, and investment.",
+  },
+  {
+    day: "Networking",
+    theme: "Structured Networking Opportunities",
+    icon: Handshake,
+    color: "from-blue-200 to-blue-300",
+    description: "Structured networking opportunities for attendees.",
   },
 ];
-
-const eventTypeStyles = {
-  Keynote: "bg-blue-500/20 text-blue-200 border-blue-400/50",
-  Panel: "bg-blue-400/20 text-blue-100 border-blue-300/50",
-  Workshop: "bg-blue-300/20 text-blue-50 border-blue-200/50",
-  Networking: "bg-blue-600/20 text-blue-300 border-blue-500/50",
-};
 
 // Holographic Program Card Component
 const HolographicProgramCard = ({
@@ -93,7 +55,7 @@ const HolographicProgramCard = ({
     viewport={{ once: true }}
     transition={{ delay: dayIndex * 0.2, duration: 0.8, ease: "easeOut" }}
     whileHover={{
-      rotateY: dayIndex === 0 ? 15 : -15,
+      rotateY: dayIndex === 0 ? 15 : dayIndex === 1 ? 0 : -15,
       rotateX: 10,
       scale: 1.02,
       y: -8,
@@ -107,7 +69,7 @@ const HolographicProgramCard = ({
     {/* Main card */}
     <div className="relative bg-black/60 backdrop-blur-lg border border-blue-300/40 rounded-3xl p-1 shadow-2xl hover:shadow-blue-500/30 transition-all duration-500">
       <div className="bg-black/40 rounded-3xl h-full p-6 sm:p-8 backdrop-blur-sm border border-white/10 hover:border-blue-300/50 transition-all duration-300">
-        {/* Day Header */}
+        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
           <div
             className={`w-16 h-16 bg-gradient-to-br ${day.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-blue-500/30 border border-blue-400/50 flex-shrink-0`}
@@ -118,64 +80,17 @@ const HolographicProgramCard = ({
             <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-blue-300 transition-colors drop-shadow-lg">
               {day.day}
             </h3>
-            <p className="text-blue-100 flex items-center gap-2 mt-1 drop-shadow-md">
-              <Calendar className="w-4 h-4" />
-              {day.date}
-            </p>
           </div>
         </div>
 
         {/* Theme */}
-        <div className="mb-8">
-          <h4 className="text-lg font-semibold text-blue-300 mb-2 drop-shadow-lg">
-            Theme:
-          </h4>
-          <p className="text-xl sm:text-2xl text-white font-medium drop-shadow-lg">
+        <div className="mb-6">
+          <h4 className="text-xl sm:text-2xl text-blue-300 mb-4 drop-shadow-lg font-semibold">
             {day.theme}
+          </h4>
+          <p className="text-blue-100 leading-relaxed drop-shadow-md text-base sm:text-lg">
+            {day.description}
           </p>
-        </div>
-
-        {/* Events Timeline */}
-        <div className="space-y-4 sm:space-y-6">
-          {day.events.map((event: any, eventIndex: number) => (
-            <motion.div
-              key={eventIndex}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 * eventIndex }}
-              className="flex flex-col sm:flex-row gap-4 group/event hover:bg-white/5 p-3 sm:p-4 rounded-xl transition-all duration-300 border border-transparent hover:border-blue-400/30"
-            >
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-blue-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-400/30">
-                  <Clock className="w-5 h-5 text-blue-300" />
-                </div>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                  <span className="text-sm font-medium text-blue-200 drop-shadow-md">
-                    {event.time}
-                  </span>
-                  <span
-                    className={`text-xs px-2 py-1 rounded-full border ${
-                      eventTypeStyles[
-                        event.type as keyof typeof eventTypeStyles
-                      ]
-                    } backdrop-blur-sm w-fit`}
-                  >
-                    {event.type}
-                  </span>
-                </div>
-                <h5 className="font-semibold text-white mb-1 group-hover/event:text-blue-300 transition-colors drop-shadow-lg text-sm sm:text-base leading-tight">
-                  {event.title}
-                </h5>
-                <p className="text-sm text-blue-100 flex items-center gap-1 drop-shadow-md">
-                  <Users className="w-3 h-3 flex-shrink-0" />
-                  <span className="truncate">{event.speaker}</span>
-                </p>
-              </div>
-            </motion.div>
-          ))}
         </div>
       </div>
     </div>
@@ -209,7 +124,7 @@ export function ProgramPreview() {
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Two Days of
+            Three Days of
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100">
               Excellence
@@ -217,18 +132,31 @@ export function ProgramPreview() {
           </h2>
 
           <p
-            className="text-lg sm:text-xl text-blue-50 max-w-4xl mx-auto leading-relaxed px-4"
+            className="text-lg sm:text-xl text-blue-50 max-w-4xl mx-auto leading-relaxed px-4 mb-8"
             style={{ textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)" }}
           >
-            Immerse yourself in cutting-edge discussions, workshops, and
-            networking opportunities designed to accelerate Africa&apos;s
-            construction and real estate future.
+            The ACRES program will be structured over two days and will feature
+            keynote speeches, panel discussions, technical workshops,
+            exhibitions, and networking events.
           </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-blue-200">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-5 h-5" />
+              <span className="font-medium">September 25-27, 2025</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5" />
+              <span className="font-medium">
+                Port Harcourt & Abuja, Nigeria
+              </span>
+            </div>
+          </div>
         </motion.div>
 
         {/* Program Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12 sm:mb-16"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-8 mb-12 sm:mb-16"
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -263,8 +191,8 @@ export function ProgramPreview() {
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full font-semibold text-base sm:text-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 border border-blue-400/50"
           >
             <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-            <span className="hidden sm:inline">View Full Program</span>
-            <span className="sm:hidden">Full Program</span>
+            <span className="hidden sm:inline">Register for ACRES</span>
+            <span className="sm:hidden">Register Now</span>
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </motion.div>
