@@ -155,7 +155,7 @@ export function HeroSection() {
         {/* Top Badge with better mobile spacing */}
         <motion.div
           variants={slideUpVariants}
-          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-xs sm:text-sm font-medium shadow-2xl mb-6 sm:mb-8"
+          className="inline-flex items-center mt-5 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/60 backdrop-blur-lg border border-indigo-300/40 text-indigo-100 text-xs sm:text-sm font-medium shadow-2xl mb-6 sm:mb-8"
         >
           <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
           <span className="text-center">
@@ -166,15 +166,11 @@ export function HeroSection() {
         {/* ACRES Title with responsive sizing */}
         <motion.h1
           variants={slideUpVariants}
-          className="text-6xl sm:text-8xl md:text-[10rem] lg:text-[14rem] xl:text-[18rem] font-black leading-none tracking-tight mb-4 sm:mb-6"
-          style={{
-            fontFamily: "system-ui, -apple-system, sans-serif",
-            textShadow:
-              "0 0 80px rgba(96, 165, 250, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8)",
-            transform: `translateY(${scrollY * -0.4}px)`,
-          }}
+          className=" font-black leading-none tracking-tight mb-4 sm:mb-6"
         >
-          <span className="text-white drop-shadow-2xl">ACRES</span>
+          <span className="text-white drop-shadow-2xl">
+            <img src="/logo.png" alt="logo" />
+          </span>
         </motion.h1>
 
         {/* Subtitle with responsive sizing */}
