@@ -182,7 +182,7 @@ export function HeroSection() {
             textShadow: "0 2px 10px rgba(0, 0, 0, 0.9)",
           }}
         >
-          African Construction & Real Estate Summit
+          Africa Construction & Real Estate Summit
         </motion.p>
 
         {/* Description with better mobile text sizing */}
